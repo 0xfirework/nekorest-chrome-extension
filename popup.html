@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- 头部：标题与设置 -->
+    <div class="header">
+      <div class="logo-area">
+        <h1>NekoRest</h1>
+        <div class="open-options-icon" id="openOptionsBtn" title="打开完整设置页">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </div>
+      </div>
+      <div class="settings-icon" id="settingsBtn" title="插件设置">
+        <svg fill="currentColor" width="18" height="18" viewBox="0 0 24 24">
+          <path
+            d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.43-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- 设置面板 (默认隐藏) -->
+    <div class="settings-panel" id="settingsPanel" style="display: none;">
+      <div class="setting-item" style="display: flex; justify-content: space-between; align-items: center;">
+        <label for="popupLanguageSelect" data-i18n="options.languageLabel" style="margin-bottom: 0;">语言设置
+          (Language)</label>
+        <div class="select-container" style="width: 120px;">
+          <select id="popupLanguageSelect" class="form-select" style="padding: 6px 24px 6px 10px; height: 32px;">
+            <option value="zh">中文</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <label for="maxWorkTimeSlider" data-i18n="options.workTimeLabel">工作时长</label>
+        <div class="slider-container">
+          <input type="range" id="maxWorkTimeSlider" min="1" max="120" value="45">
+          <span class="slider-value" id="maxWorkTimeValue">45m</span>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <label for="breakDurationSlider" data-i18n="options.breakTimeLabel">休息时长</label>
+        <div class="slider-container">
+          <input type="range" id="breakDurationSlider" min="1" max="30" value="5">
+          <span class="slider-value" id="breakDurationValue">5m</span>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <div class="toggle-container" style="border: none; padding: 0; box-shadow: none; background: transparent;">
+          <span class="toggle-label" data-i18n="options.notificationLabel">通知提醒</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="notificationToggle" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="setting-hint" data-i18n="options.notificationDesc">需同时开启系统通知权限</div>
+      </div>
+
+      <button class="btn btn-primary" id="saveSettingsBtn" data-i18n="options.saveBtn">完成</button>
+      <div class="save-message" id="saveMessage" style="display: none;" data-i18n="options.success">设置已更新</div>
+    </div>
+
+    <!-- 宠物展示 -->
+    <div class="pet-display" id="petDisplay">
+      <img src="icon-happy.png" alt="Pet" class="pet-image" id="petImage">
+      <div class="pet-status" id="petStatus">状态良好</div>
+      <div class="pixel-progress-bar" id="pixelProgressBar"></div> <!-- 像素进度条 -->
+      <div class="pet-time" id="petTime">已久坐 0m / 上限 45m</div>
+      <div class="pet-level" id="petLevel" style="margin-top: 5px; font-size: 11px; color: #666; opacity: 0.8;">Lv.1 幼崽猫
+        (0/50 XP)</div>
+    </div>
+
+    <!-- 核心操作 (播放器风格) -->
+    <div class="player-controls">
+      <!-- 停止/重置按钮 (左) -->
+      <button class="player-btn btn-sub" id="resetBtn" title="长按重置/停止">
+        <!-- 长按进度环 -->
+        <svg class="long-press-ring" width="100%" height="100%" viewBox="0 0 44 44">
+          <circle class="ring-circle" cx="22" cy="22" r="21" fill="none" stroke="currentColor" stroke-width="3" />
+        </svg>
+        <span class="btn-content">
+          <svg viewBox="0 0 24 24" width="16" height="16">
+            <path d="M6 6h12v12H6z" />
+          </svg>
+        </span>
+      </button>
+
+      <!-- 休息按钮 (咖啡杯) - 仅生病时显示 -->
+      <button class="player-btn btn-sub" id="restBtn" title="休息一会儿 (恢复状态)" style="display: none;">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+          <path
+            d="M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 5h-2V5h2v3zM4 19h16v2H4z" />
+        </svg>
+      </button>
+
+      <!-- 暂停/继续按钮 (中) -->
+      <button class="player-btn btn-main" id="pauseBtn" title="暂停/继续">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+        </svg>
+      </button>
+
+      <!-- 纯净模式按钮 (右) -->
+      <button class="player-btn btn-sub" id="zenBtn" title="进入纯净模式">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2l10 10-10 10L2 12z" />
+        </svg>
+      </button>
+    </div>
+
+
+  </div>
+
+  <script src="locales.js"></script>
+  <script src="popup.js"></script>
+</body>
+
+</html>

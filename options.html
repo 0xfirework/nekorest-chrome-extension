@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NekoRest - 设置</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="options-page">
+    <div class="container">
+        <h1>⚙️ NekoRest 设置</h1>
+        <p class="subtitle">调整你的久坐提醒参数</p>
+
+        <!-- 成功提示（初始隐藏） -->
+        <div id="successMessage" class="success-message" style="display: none;">
+            ✅ 设置已保存！
+        </div>
+
+        <!-- 语言设置 -->
+        <div class="setting-item" style="display: flex; justify-content: space-between; align-items: center;">
+            <label for="languageSelect" data-i18n="options.languageLabel" style="margin-bottom: 0;">
+                🌍 语言设置 (Language)
+            </label>
+            <div class="select-container" style="width: 140px;">
+                <select id="languageSelect" class="form-select" style="padding: 8px 30px 8px 12px; height: 36px;">
+                    <option value="zh">中文</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- 工作时长设置 -->
+        <div class="setting-item">
+            <label for="maxWorkTime">
+                <span data-i18n="options.workTimeLabel">🕐 工作时长阈值</span>
+                <span style="color: #999; font-size: 12px;" data-i18n="options.workTimeDesc">（超过此时长宠物会生病）</span>
+            </label>
+            <div class="slider-container">
+                <input type="range" id="maxWorkTime" min="1" max="120" value="45">
+                <span class="value-display" id="maxWorkTimeValue">45 分钟</span>
+            </div>
+        </div>
+
+        <!-- 休息时长设置 -->
+        <div class="setting-item">
+            <label for="breakDuration">
+                <span data-i18n="options.breakTimeLabel">☕ 休息时长阈值</span>
+                <span style="color: #999; font-size: 12px;" data-i18n="options.breakTimeDesc">（休息多久后重置计时器）</span>
+            </label>
+            <div class="slider-container">
+                <input type="range" id="breakDuration" min="1" max="30" value="5">
+                <span class="value-display" id="breakDurationValue">5 分钟</span>
+            </div>
+        </div>
+
+        <!-- 保存按钮 -->
+        <button class="btn btn-primary" id="saveBtn">💾 保存设置</button>
+
+        <!-- 使用说明 -->
+        <div class="info-card">
+            <p><strong>📖 参数说明：</strong></p>
+            <p><strong>工作时长阈值：</strong>连续活跃超过此时长后，宠物会显示"生病"状态并发送通知提醒你休息。</p>
+            <p><strong>休息时长阈值：</strong>当你离开电脑（空闲或锁屏）超过此时长后，计时器会自动重置，宠物恢复健康。</p>
+
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+
+            <p><strong>💡 状态小贴士 (STATUS TIPS)：</strong></p>
+            <ul style="margin: 0; padding-left: 20px; color: #555; font-size: 13px;">
+                <li style="margin: 5px 0;">久坐时宠物会生病，这是提醒你该休息啦</li>
+                <li style="margin: 5px 0;">离开电脑（锁屏/空闲）后，计时会自动重置</li>
+            </ul>
+
+            <p style="margin-top: 15px; color: #667eea;"><strong>✨ 推荐设置：</strong>工作 45 分钟，休息 5 分钟（番茄工作法）</p>
+        </div>
+    </div>
+
+    <div id="debug-info" style="display: none;"></div>
+
+    <script src="locales.js"></script>
+    <script src="options.js"></script>
+</body>
+
+</html>

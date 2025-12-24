@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "NekoRest - 猫咪久坐提醒助手",
+  "version": "1.0.0",
+  "description": "通过电子宠物的状态变化提醒你起来休息，告别久坐！",
+  "permissions": [
+    "idle",
+    "storage",
+    "notifications"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon-16.png",
+      "48": "icon-48.png",
+      "128": "icon-128.png"
+    }
+  },
+  "options_page": "options.html",
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  }
+}
