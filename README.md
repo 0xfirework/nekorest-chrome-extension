@@ -1,86 +1,86 @@
-# NekoRest - 猫咪久坐提醒助手
+# NekoRest - Cat Focus Timer
 
 ![Version](https://img.shields.io/badge/version-1.0.6-blue) ![Chrome](https://img.shields.io/badge/platform-Chrome%20Extension-green) ![License](https://img.shields.io/badge/license-MIT-orange)
 
-[English](./README_EN.md) | 中文文档
+English | [中文文档](./README_CN.md)
 
-## 🐱 简介 (Introduction)
+## 🐱 Introduction
 
-**NekoRest** 是一款运行在 Chrome 浏览器上的像素风电子宠物插件。
+**NekoRest** is a pixel-art style virtual pet extension for Chrome.
 
-它不仅仅是一个番茄钟，更是一只有生命的猫咪。当你专注工作时，猫咪会开心地陪伴你；但如果你连续久坐太久，猫咪会生病、甚至"灵魂出窍"来抗议！
+It's not just a Pomodoro timer, but a living cat companion. When you focus on your work, the cat stays happy and keeps you company; but if you sit for too long without a break, the cat will get sick, or even have an "out-of-body experience" to protest!
 
-用最可爱的方式，提醒你关注健康。
+Reminding you to stay healthy in the cutest way possible.
 
 ![Demo](demo.png)
 
-## ✨ 核心功能 (Features)
+## ✨ Features
 
-*   **🧘 智能久坐监测**：
-    *   利用 Chrome Idle API 智能判断你的活跃状态。
-    *   **自动重置**：当你离开电脑（锁屏或离开）超过设定时长（默认 5 分钟），计时器自动重置。
-    *   无需手动操作，一切都在后台默默守护。
-*   **🎮 RPG 养成系统**：
-    *   **XP 升级**：健康工作每 10 分钟获得经验值，达成休息目标也有奖励。
-    *   **猫咪进化**：从"幼崽猫"一路进化到"猫神"，解锁 9 个不同等级称号。
-    *   **生病惩罚**：久坐超时会扣除经验值，"开挂"（强制重置）也会受到惩罚！
-*   **🎨 丰富的状态反馈**：
-    *   **开心 (Happy)**：工作时间在安全范围内。
-    *   **焦虑 (Anxious)**：接近久坐阈值 (70%)。
-    *   **生病 (Sick)**：久坐超时，猫咪倒地不起。
-    *   **灵魂升天 (Soul)**：严重超时 (超 1 小时)，猫咪灵魂出窍！
-    *   **休息模式 (Sleep)**：点击咖啡杯进入倒计时休息，猫咪会打呼噜睡觉。
-*   **🌍 双语支持 (i18n)**：
-    *   支持 **简体中文** 和 **English**。
-    *   界面语言可一键切换，实时生效。
-*   **☯️ 纯净模式 (Zen Mode)**：
-    *   点击猫咪或切换开关，隐藏所有UI文字，仅保留极简的像素进度条，打造沉浸式专注体验。
+*   **🧘 Smart Idle Detection**:
+    *   Uses the Chrome Idle API to intelligently detect your activity status.
+    *   **Auto Reset**: When you leave your computer (lock screen or idle) for a set duration (default 5 mins), the timer resets automatically.
+    *   No manual operation needed, it guards you silently in the background.
+*   **🎮 RPG Level System**:
+    *   **XP Growth**: Gain XP every 10 minutes of healthy work, and get bonus rewards for completing rest goals.
+    *   **Cat Evolution**: Evolve from "Egg Cat" all the way to "God Cat", unlocking 9 different rank titles.
+    *   **Sickness Penalty**: Sitting too long deducts XP, and "cheating" (forced reset) also incurs a penalty!
+*   **🎨 Rich Status Feedback**:
+    *   **Happy**: Working time is within the safe range.
+    *   **Anxious**: Approaching the sitting limit (70%).
+    *   **Sick**: Exceeded the limit, the cat falls down.
+    *   **Soul**: Severely exceeded (over 1 hour), the cat's soul leaves its body!
+    *   **Sleep Mode**: Click the coffee cup to enter a countdown rest mode, the cat will sleep and snore.
+*   **🌍 Bilingual Support (i18n)**:
+    *   Supports **English** and **Simplified Chinese**.
+    *   Switch interface language instantly.
+*   **☯️ Zen Mode**:
+    *   Click the cat or toggle the switch to hide all text UI, keeping only a minimalist pixel progress bar for an immersive focus experience.
 
-## 📦 安装说明 (Installation)
+## 📦 Installation
 
-### 商店安装 (推荐)
-> 正在审核中，敬请期待 Chrome Web Store 链接...
+### Chrome Web Store (Recommended)
+> Under review, Chrome Web Store link coming soon...
 
-### 开发者模式安装 (手动)
-1. 下载最新发布的 `nekorest-v1.0.x.zip` 压缩包并解压。
-2. 打开 Chrome 浏览器，访问 `chrome://extensions/`。
-3. 打开右上角的 **"开发者模式"** 开关。
-4. 点击左上角的 **"加载已解压的扩展程序"**。
-5. 选择解压后的文件夹即可。
+### Developer Mode (Manual)
+1. Download the latest `nekorest-v1.0.x.zip` release and unzip it.
+2. Open Chrome and visit `chrome://extensions/`.
+3. Toggle **"Developer mode"** in the top right corner.
+4. Click **"Load unpacked"** in the top left.
+5. Select the unzipped folder.
 
-## ⚙️ 推荐设置 (Recommended Settings)
+## ⚙️ Recommended Settings
 
-为了达到最佳的"番茄工作法"体验，建议设置如下：
+For the best "Pomodoro" experience, we recommend:
 
-*   **工作时长阈值**：45 分钟（每专注 45 分钟休息一次）
-*   **休息时长阈值**：5 分钟（离开电脑 5 分钟视为完成休息）
+*   **Focus Duration**: 45 minutes (Rest once every 45 mins of focus)
+*   **Rest Duration**: 5 minutes (Leaving the computer for 5 mins counts as a completed break)
 
-## 🛠️ 开发指南 (Development)
+## 🛠️ Development
 
-本项目使用原生 JavaScript/HTML/CSS 开发，无复杂构建流程。
+This project is built with native JavaScript/HTML/CSS, with no complex build process.
 
-### 目录结构
+### Directory Structure
 ```text
 /
-├── manifest.json      # 扩展配置文件 (MV3)
-├── background.js      # 后台服务 (状态管理、久坐核心逻辑)
-├── popup.html/js      # 弹出界面 (UI交互、动画)
-├── options.html/js    # 设置页面
-├── locales.js         # 多语言资源文件
-├── styles.css         # 全局样式
-└── icons/             # 图标资源
+├── manifest.json      # Extension Config (MV3)
+├── background.js      # Background Service (State management, Core logic)
+├── popup.html/js      # Popup UI (Interaction, Animation)
+├── options.html/js    # Settings Page
+├── locales.js         # i18n Resources
+├── styles.css         # Global Styles
+└── icons/             # Icon Assets
 ```
 
-### 调试
-*   **Popup**: 右键扩展图标 -> "审查弹出内容"。
-*   **Background**: 在扩展管理页点击 "Service Worker" 查看后台日志。
+### Debugging
+*   **Popup**: Right-click the extension icon -> "Inspect popup".
+*   **Background**: Click "Service Worker" in the extensions management page to view background logs.
 
-## 📝 版本历史 (Changelog)
+## 📝 Changelog
 
-*   **v1.0.6**: 优化语言切换体验，UI 细节打磨。
-*   **v1.0.4**: 新增 Popup 内联语言切换，修复重复加载 Bug。
-*   **v1.0.0**: 初始版本发布，包含完整久坐检测与 XP 系统。
+*   **v1.0.6**: Optimized language switching experience, UI polish.
+*   **v1.0.4**: Added inline language switching in Popup, fixed duplicate load bugs.
+*   **v1.0.0**: Initial release with full idle detection and XP system.
 
-## 📄 许可证 (License)
+## 📄 License
 
-MIT License. 欢迎 Fork 和提交 PR！
+MIT License. Fork and PR welcome!

@@ -97,3 +97,30 @@
 1.  **自动打包**: 我可以帮你运行命令生成纯净的 `nekorest-v1.0.0.zip`。
 2.  **生成图标**: 我可以尝试用 `sips` 命令帮你把 `icon.png` 缩放成标准的 `128x128`, `48x48`, `16x16` 尺寸，方便你提交。
 3.  **清理代码**: 如果需要，我可以帮你移除 `background.js` 里的 console.log。
+
+## 5. 发布到 GitHub (Publishing to GitHub)
+
+你的项目已经完成了本地 git 初始化和提交。现在只需将其推送到 GitHub：
+
+1.  **创建远程仓库**:
+    -   登录 [GitHub](https://github.com/new)。
+    -   创建一个新仓库 (Repository name 建议填 `nekorest-chrome-extension` 或类似名字)。
+    -   **不要**勾选 "Initialize with a README" 或 .gitignore (我们本地已经有了)。
+
+2.  **推送代码**:
+    -   在 GitHub 页面上找到 "...or push an existing repository from the command line" 这一栏。
+    -   复制其中的命令并在你的终端运行（如下所示）：
+
+    ```bash
+    git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+    git branch -M main
+    git push -u origin main
+    ```
+
+3.  **后续更新**:
+    -   每次修改代码后，运行：
+        ```bash
+        git add .
+        git commit -m "描述你的修改"
+        git push
+        ```
