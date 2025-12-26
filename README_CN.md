@@ -12,7 +12,7 @@
 
 用最可爱的方式，提醒你关注健康。
 
-![Demo](demo.png)
+![Demo](demo.png) ![Rest Mode](rest_mode_demo.png)
 
 ## ✨ 核心功能 (Features)
 

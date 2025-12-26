@@ -12,7 +12,7 @@ It's not just a Pomodoro timer, but a living cat companion. When you focus on yo
 
 Reminding you to stay healthy in the cutest way possible.
 
-![Demo](demo.png)
+![Demo](demo.png) ![Rest Mode](rest_mode_demo.png)
 
 ## ✨ Features
 
